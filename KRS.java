@@ -1,6 +1,6 @@
 class KRS extends Dam{
 	
-	public String lengthInMetre = "2620";
+	public int lengthInMetre = 2620;
 	
 	public KRS(){
 		System.out.println("KRS object is created");

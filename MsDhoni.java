@@ -1,8 +1,8 @@
 class MsDhoni extends Cricketer{
 	
-	String bornOn = "7th July 1981";
-	String role = "Wicket keeper, Batsman";
-	int shirtNo = 7;
+	public String bornOn = "7th July 1981";
+	public String role = "Wicket keeper, Batsman";
+	public int shirtNo = 7;
 	
 	public MsDhoni(){
 		System.out.println("MsDhoni object is created");
