@@ -6,7 +6,7 @@ class Hospital{
 	
 	public Hospital(int size){
 		patients = new PatientDTO[size];
-		System.out.println(this.getClass().getSimpleName() +"object is created");
+		System.out.println(this.getClass().getSimpleName() + "object is created");
 	}
 	
 	public void savePatients(PatientDTO patients){
@@ -21,9 +21,9 @@ class Hospital{
 	}
 	
 	public void getPatients(){
-		for(int i=0; i<patients.length; i++){
-		if(patients[i] != null){	
-			System.out.println(patients[i].getPatientId() +", "+ patients[i].getName() +", "+ patients[i].getAddress() +", "+ patients[i].getAge() +", "+ patients[i].getMobileNo() );
+		for(PatientDTO pdto : patients){
+		if(pdto != null){
+			System.out.println(pdto.getPatientId() +", "+ pdto.getName() +", "+ pdto.getAge() +", "+ pdto.getMobileNo());
 		}else{
 			System.out.println("No patient found");
 		}
@@ -59,6 +59,20 @@ class Hospital{
 		return deleted;
 	}
 	
+	public void getPatientDetailsByName(String name){
+		System.out.println("invoked patient details by patient name()");
+		
+		for(int i=0; i<patients.length; i++){
+			if(patients[i] != null){
+				if(name.equals(patients[i].getName())){
+					System.out.println(patients[i].getPatientId() +", "+ patients[i].getName() +", "+ patients[i].getAddress() +", "+ patients[i].getAge() +", "+ patients[i].getMobileNo() );
+				}else{
+					System.out.println("No patient found");
+				}
+			}
+		}
+	}
+		
 	public void setName(String name){
 		this.name = name;
 	}

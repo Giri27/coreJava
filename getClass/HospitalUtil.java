@@ -20,21 +20,30 @@ class HospitalUtil{
 		dto1.setName("Kishan");
 		dto1.setPatientId("2");
 		dto1.setAge(45);
-		dto1.setMobileNo(7789786543L);
+		dto1.setMobileNo(7789786542L);
 		String addressDetails1[] = {"VijayaNagar, Bangalore-560040", "Hubli-560038"};
 		dto1.setAddress(addressDetails1);
 		
+		PatientDTO dto2 = new PatientDTO();
+		dto2.setName("Rohan");
+		dto2.setPatientId("3");
+		dto2.setAge(62);
+		dto2.setMobileNo(8765987655L);
+		String addressDetails2[] = {"RajajiNagar, Bangalore-560048", "Hubli-560038"};
+		dto1.setAddress(addressDetails2);
+		
 		hosp.savePatients(dto);
 		hosp.savePatients(dto1);
-		
+		hosp.savePatients(dto2);
+				
 		hosp.getPatients();
 		hosp.updatePatientsMobileNoByPatientId(8976587655L, "2");
 		hosp.getPatients();
 		hosp.deletePatientById("2");
 		hosp.getPatients();
-		
-		
-		
+		hosp.getPatientDetailsByName("Hemanth");
+		hosp.getPatientDetailsByName("Rohan");
+				
 	}
 
 	
