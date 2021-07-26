@@ -28,16 +28,8 @@ class MobileUtil{
 			dto.setSizeInMb(sizeInMb);
 			dto.isInternetRequired(Boolean.parseBoolean(internetRequired));
 			//mobile.createApps(dto);
-			//System.out.println(mobile.createApps(dto));
+			System.out.println(mobile.createApps(dto));
 		}
-		/*AppsDTO dto1 = new AppsDTO();
-		dto1.setAppsId(2);
-		dto1.setName("Instagram");
-		dto1.setType("Social-Media");
-		dto1.setSizeInMb("50mb");
-		dto1.isInternetRequired(true);
-		System.out.println(mobile.createApps(dto1));
-		mobile.createApps(dto1);*/
 		
 		mobile.getApps();
 		
@@ -45,10 +37,28 @@ class MobileUtil{
 		String name = sc.next();
 		System.out.println("Enter the size of app");
 		String sizeInMb = sc.next();
-		System.out.println();
-		System.out.println(mobile.updateAppSizeByName("70mb", "Flipkart"));
+		System.out.println(mobile.updateAppSizeByName(sizeInMb, name));
 		
 		mobile.getApps();
+		
+		System.out.println("Enter the application id");
+		int appsId = sc.nextInt();
+		System.out.println(mobile.deleteAppDetailsByAppsId(appsId));
+		
+		mobile.getApps();
+		
+		System.out.println("Enter the application id");
+		int appsId1 = sc.nextInt();
+		mobile.getAppById(name, appsId1);
+		
+		System.out.println("is internet Required");
+		boolean internetRequired = sc.nextBoolean();
+		mobile.getAppByInternetRequired(name, internetRequired);
+		
+		
+		System.out.println("Enter the type");
+		String type = sc.next();
+		mobile.getAppsByType(name, type);
 	}
 
 }
