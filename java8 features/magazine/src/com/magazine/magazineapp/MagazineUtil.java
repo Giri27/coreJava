@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 import com.magazine.magazineapp.comparator.SortByType;
@@ -68,7 +69,11 @@ public class MagazineUtil {
 		System.out.println("\nUsing method reference");
 		MagazineDAO dao = MagazineDAOImpl :: information;
 		dao.information();
-				
+			
+		//BiConsumer
+		System.out.println("\nBiConsumer using lambda expression");
+		BiConsumer<String, String> consumer3 = (magazineName, magazineType) -> System.out.println(magazineName+" "+magazineType);
+		consumer3.accept("India Today", "News");
 				
 	}
 
